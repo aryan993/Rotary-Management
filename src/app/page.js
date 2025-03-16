@@ -43,14 +43,12 @@ export default function Home() {
         <table className="min-w-full bg-white border border-gray-300">
           <thead>
             <tr>
-              <th className="py-2 px-2 border-b">Photo</th>
               <th className="py-2 px-2 border-b">Name</th>
               <th className="py-2 px-2 border-b">DOB</th>
               <th className="py-2 px-2 border-b">Email</th>
               <th className="py-2 px-2 border-b">Phone number</th>
               <th className="py-2 px-2 border-b">Club</th>
               <th className="py-2 px-2 border-b">Anniversary</th>
-              <th className="py-2 px-2 border-b">Photo</th>
               <th className="py-2 px-2 border-b">Spouse Name</th>
               <th className="py-2 px-2 border-b">Spouse DOB</th>
               <th className="py-2 px-2 border-b">Spouse email</th>
@@ -63,13 +61,6 @@ export default function Home() {
           <tbody>
             {data.map((data) => (
               <tr key={data.member_id} className="hover:bg-gray-50">
-                <td className="py-2 px-5 border-b text-center">
-                  <div
-                    className={`w-4 h-4 rounded ${
-                      data.member_image_id ? "bg-green-500" : "bg-red-500"
-                    }`}
-                  ></div>
-                </td>
                 <td className="py-2 px-2 border-b">{data.member_name}</td>
                 <td className="py-2 px-2 border-b">
                   {formatDate(data.member_birthday)}
@@ -79,15 +70,6 @@ export default function Home() {
                 <td className="py-2 px-2 border-b">{data.member_club}</td>
                 <td className="py-2 px-2 border-b">
                   {formatDate(data.anniversary_date)}
-                </td>
-                <td className="py-2 px-5 border-b text-center">
-                  {data.spouse_id && (
-                    <div
-                      className={`w-4 h-4 rounded ${
-                        data.spouse_image_id ? "bg-green-500" : "bg-red-500"
-                      }`}
-                    ></div>
-                  )}
                 </td>
                 <td className="py-2 px-2 border-b">{data.spouse_name}</td>
                 <td className="py-2 px-2 border-b">
